@@ -72,5 +72,10 @@ public class bookController {
          bookService.delete(id);
     }
 
+    @PostMapping("/books/by")
+    public  List<Book> findAuthor(@RequestParam String author){
+        System.out.println(author);
+       return bookService.findAuthor(author);
+    }
 
 }
