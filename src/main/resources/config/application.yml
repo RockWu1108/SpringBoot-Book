@@ -1,0 +1,34 @@
+
+server:
+  port: 8000
+  error:
+    include-message: always
+
+#預設資料
+book:
+  name: Spring Boot
+  author: Rock
+  price : 300
+  isbn : ${random.uuid}
+  description : ${book.name} , very good
+
+
+
+#資料庫設定
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book
+    password: 12345
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+
+
+
