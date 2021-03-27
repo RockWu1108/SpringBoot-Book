@@ -37,4 +37,10 @@ public class bookService {
     public List<Book> findAuthor(String author){
         return  bookRepository.findByAuthor(author);
     }
+    public List<Book> findByPrice(int price){
+        return  bookRepository.findByPrice(price);
+    }
+    public int updateByPrice(int price , long id){
+        return bookRepository.updateByPrice(price,id);
+    }
 }

@@ -27,7 +27,6 @@ public class bookController {
     }
 
     @GetMapping("/books/{id}")
-
     public Book getOneBook(@PathVariable long id){
         return  bookService.fineOne(id);
     }
@@ -78,4 +77,14 @@ public class bookController {
        return bookService.findAuthor(author);
     }
 
+    @PostMapping("/books/by/{price}")
+    public  List<Book> findByPrice(@PathVariable int  price){
+        return bookService.findByPrice(price);
+    }
+
+    @PutMapping("/books/by")
+    public  int updateByPrice(@RequestParam int  price,
+                              @RequestParam long id) {
+        return bookService.updateByPrice(price, id);
+    }
 }
